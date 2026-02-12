@@ -1,0 +1,30 @@
+<template>
+  <field after="#fsOrder-General [name='DaysToKeep']" name="UsrICFBActivateOrderTypeRestriction"></field>
+  <field
+      after="#fsOrder-General [name='UsrICFBActivateOrderTypeRestriction']"
+      name="UsrICFBPrintSalesInvoice"></field>
+  <field
+      after="#fsOrder-General [name='UsrICFBPrintSalesInvoice']"
+      name="UsrICFBPrintSalesInvoiceFBI"></field>
+  <field
+      after="#fsOrder-General [name='UsrICFBPrintSalesInvoiceFBI']"
+      name="UsrICFBPrintCommercialInvoice"></field>
+  <field
+      after="#fsOrder-General [name='UsrICFBPrintCommercialInvoice']"
+      name="UsrICFBPrintCommercialInvoiceVerde"></field>
+  <field
+      after="#fsOrder-General [name='UsrICFBPrintCommercialInvoiceVerde']"
+      name="UsrICFBPrintAuthorityToWithdraw"></field>
+  <field
+      after="#fsOrder-General [name='UsrICFBPrintAuthorityToWithdraw']"
+      name="UsrICFBPrintOrderSlip"></field>
+  <field
+      after="#fsOrder-General [name='UsrICFBPrintOrderSlip']"
+      name="UsrICFBPrintOrderConfirmation"></field>
+  <field
+      after="#fsOrder-General [name='UsrICFBPrintOrderConfirmation']"
+      name="UsrICFBPrintProformaInvoice"></field>
+  <qp-tab id="tabUserRoles" append="QP-TABBAR" caption="User Roles">
+    <qp-grid id="gridUserRoles" view.bind="RolesDetail"></qp-grid>
+  </qp-tab>
+</template>
