@@ -1,0 +1,39 @@
+<template>
+  <qp-caption append="#divColumnB-Financial" caption="Instructions"></qp-caption>
+  <qp-fieldset
+      id="tabFinancial14_CurrentDocument_InstructionsForm_fs"
+      append="#divColumnB-Financial"
+      view.bind="CurrentDocument"
+      wg-container="">
+    <field name="UsrICFBInvoiceInstruction"></field>
+  </qp-fieldset>
+  <qp-tab id="tabShipping" after="#tab-Financial" caption="Shipping">
+    <qp-template id="tabShipping_div" name="1">
+      <div slot="A">
+        <qp-caption caption="Shipping Details"></qp-caption>
+        <qp-fieldset
+            id="CurrentDocument_CstPXLayoutRule10_fs"
+            slot="A"
+            view.bind="CurrentDocument"
+            wg-container="CurrentDocument_tab">
+          <field name="UsrICFBEntryDateNbr"></field>
+          <field name="UsrICFBBillOfLadingNbr"></field>
+          <field name="UsrICFBAirWayBillNbr"></field>
+          <field name="UsrICFBBLOrAWDDate"></field>
+          <field name="UsrICFBVessel"></field>
+          <field name="UsrICFBContainerNbr"></field>
+          <field name="UsrICFBSealNbr"></field>
+          <field name="UsrICFBEstDeliveryDate"></field>
+          <field name="UsrICFBEstArrivalDate"></field>
+          <field name="UsrICFBActualDateofDep"></field>
+        </qp-fieldset>
+      </div>
+    </qp-template>
+  </qp-tab>
+  <qp-tab id="tabNotesLog" after="#tab-Approval" caption="Notes Log">
+    <qp-grid id="grdICFBNotes" view.bind="NotesLog"></qp-grid>
+  </qp-tab>
+  <qp-tab id="tabHyperlink" append="QP-TABBAR" caption="Hyperlink">
+    <qp-grid id="grdICFBFile" view.bind="FileDetails"></qp-grid>
+  </qp-tab>
+</template>
