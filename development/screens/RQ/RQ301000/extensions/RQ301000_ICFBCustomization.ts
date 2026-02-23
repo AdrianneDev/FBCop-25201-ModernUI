@@ -5,8 +5,8 @@ import {
 	RQRequestLine as RQRequestLine_Base
 } from "src/screens/RQ/RQ301000/RQ301000";
 
-export interface RQ301000_Extension extends RQ301000 {}
-export class RQ301000_Extension {
+export interface RQ301000_ICFBCustomization extends RQ301000 {}
+export class RQ301000_ICFBCustomization {
 	// Custom views for tabs
 	NotesLog = createCollection(ICFBNotelogs);
 	FileDetails = createCollection(ICFBFileDetails);

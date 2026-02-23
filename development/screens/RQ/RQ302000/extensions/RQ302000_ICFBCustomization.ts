@@ -12,9 +12,9 @@ import {
 } from "client-controls";
 import { RQ302000 } from "src/screens/RQ/RQ302000/RQ302000";
 
-export interface RQ302000_ICFBCustomization_converted extends RQ302000 {}
+export interface RQ302000_ICFBCustomization extends RQ302000 {}
 
-export class RQ302000_ICFBCustomization_converted {
+export class RQ302000_ICFBCustomization {
   @viewInfo({ containerName: "Hyperlink" })
   FileDetails = createCollection(ICFBFileDetails);
 }

@@ -13,9 +13,9 @@ import {
 import { SO201000 } from "src/screens/SO/SO201000/SO201000";
 import { SOOrderTypeHeaderSettingsAM } from "src/screens/SO/SO201000/extensions/SO201000_Manufacturing";
 
-export interface SO201000_ICFBCustomization_converted extends SO201000 {}
+export interface SO201000_ICFBCustomization extends SO201000 {}
 
-export class SO201000_ICFBCustomization_converted {
+export class SO201000_ICFBCustomization {
   @viewInfo({ containerName: "User Roles" })
   RolesDetail = createCollection(ICFBSOOrderTypeRolesDetail);
 }

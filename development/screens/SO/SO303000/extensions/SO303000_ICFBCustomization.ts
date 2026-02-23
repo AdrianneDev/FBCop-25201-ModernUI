@@ -13,9 +13,9 @@ import {
 } from "client-controls";
 import { SO303000, ARInvoiceCurrent } from "src/screens/SO/SO303000/SO303000";
 
-export interface SO303000_ICFBCustomization_converted extends SO303000 {}
+export interface SO303000_ICFBCustomization extends SO303000 {}
 
-export class SO303000_ICFBCustomization_converted {
+export class SO303000_ICFBCustomization {
   @viewInfo({ containerName: "Notes Log" })
   NotesLog = createCollection(ICFBNotelogs);
   @viewInfo({ containerName: "Hyperlink" })
