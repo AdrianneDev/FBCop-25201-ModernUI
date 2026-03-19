@@ -1,0 +1,13 @@
+<template>
+    <!-- Bank Reference Number field with Set button - added after CuryConsolidateChargeTotal in column C -->
+    <field after="#columnSecond-Document [name='PMInstanceID']" name="UsrICFBBankRefNbr" replace-content view.bind="ICFBARPaymentBankReferenceNoView">
+        <qp-field control-state.bind="ICFBARPaymentBankReferenceNoView.UsrICFBBankRefNbr" class="col-10"></qp-field>
+        <qp-button
+            id="btnSetBankRefNo"
+            wg-name="SetBankReferenceNbr"
+            state.bind="SetBankRefNo"
+            class="col-2"
+            caption="Set">
+        </qp-button>
+    </field>
+</template>

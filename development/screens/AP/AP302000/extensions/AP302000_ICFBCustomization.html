@@ -1,0 +1,27 @@
+<template>
+	<!-- Custom fields: Date of Check Released and Date of Check Cleared (Document view) -->
+	<field
+		after="#columnFirst-Summary [name='AdjDate']"
+		name="UsrICFBCheckReleased"
+	></field>
+	<field
+		after="#columnFirst-Summary [name='UsrICFBCheckReleased']"
+		name="UsrICFBCheckCleared"
+	></field>
+    
+    <field after="#columnFirst-Summary [name='Status']" name="fsUsrICFBCheckStatus" unbound replace-content>
+        <qp-field class="col-10" config-enabled.bind="false" control-state.bind="ICFBAPPaymentCheckStatusView.UsrICFBCheckStatus"></qp-field>
+        <qp-button class="col-2" id="btnSetCheckStatus" state.bind="SetCheckStatus" caption="Set"></qp-button>
+    </field>
+
+        
+	<!-- Hyperlink Tab -->
+	<qp-tab id="tabICFBHyperlink" after="#ComplianceTab" caption="Hyperlink">
+		<qp-grid id="gridICFBFileDetails" view.bind="FileDetails" wg-container="FileDetails_grid"></qp-grid>
+	</qp-tab>
+
+	<!-- OR Link Tab -->
+	<qp-tab id="tabICFBORLink" after="#tabICFBHyperlink" caption="OR Link">
+		<qp-grid id="gridICFBORLink" view.bind="ORLink" wg-container="ORLink_grid"></qp-grid>
+	</qp-tab>
+</template>

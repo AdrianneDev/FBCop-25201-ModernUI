@@ -1,0 +1,19 @@
+<template>
+	<!-- Nut Buying Tab - conditionally visible based on VendorClass setting -->
+	<qp-tab id="tabNutBuying"
+		after="#tabSuppliedByVendors"
+		caption="Nut Buying"
+		if.bind="CurrentVendor.IsNutBuyingTabVisible.value == true">
+		<qp-template id="formNutBuying" name="1-1" class="label-size-m">
+			<qp-fieldset slot="A" id="fsNutBuyingSettings" view.bind="CurrentVendor" caption="Nut Buying Settings">
+				<field name="UsrICFBNutBuyingSourceType"></field>
+				<field name="UsrICFBNutBuyingLocation"></field>
+			</qp-fieldset>
+		</qp-template>
+	</qp-tab>
+
+	<!-- Hyperlink Tab -->
+	<qp-tab id="tabICFBHyperlink" after="#ComplianceTab" caption="Hyperlink">
+		<qp-grid id="gridICFBFileDetails" view.bind="FileDetails" wg-container="FileDetails_grid"></qp-grid>
+	</qp-tab>
+</template>

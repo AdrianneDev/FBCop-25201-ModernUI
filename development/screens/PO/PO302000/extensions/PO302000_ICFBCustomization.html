@@ -1,0 +1,40 @@
+<template>
+	<!-- Header Fields -->
+	<field after="#fsColumnA-Receipt [name='FinPeriodID']" name="UsrICFBPurchaseOrderType" view.bind="Document"></field>
+	<field after="#fsColumnA-Receipt [name='UsrICFBPurchaseOrderType']" name="UsrICFBDeliveryReceipt" view.bind="Document"></field>
+
+
+	<!-- Grid columns are automatically added from the TypeScript view extension with @placeAfterProperty decorator -->
+
+	<!-- Nut Buying Tab visible only if purchase order type is Coconut -->
+	<qp-tab id="tab-NutBuying" after="#tab-LandedCosts" caption="Nut Buying" load-on-demand.bind="false" visible.bind="Document.IsNutBuyingFarmerTabVisible.value == true">
+		<qp-template id="form-NutBuying" name="1-1" class="equal-height">
+			<div id="divColumnA-NutBuying" slot="A" class="v-stack">
+				<qp-fieldset id="fsPrimaryInfo-NutBuying" view.bind="CurrentDocument" caption="Primary Information">
+					<field name="UsrICFBPDRNbr"></field>
+					<field name="UsrICFBTruckPlateNbr"></field>
+					<field name="UsrICFBGatePassNbr"></field>
+					<field name="UsrICFBTimeIn"></field>
+					<field name="UsrICFBTimeOut"></field>
+				</qp-fieldset>
+				<qp-fieldset id="fsReceivingInfo-NutBuying" view.bind="CurrentDocument" caption="Receiving Information">
+					<field name="UsrICFBCoconutType"></field>
+					<field name="UsrICFBCondition"></field>
+					<field name="UsrICFBTareWeight"></field>
+					<field name="UsrICFBDeductionPerc"></field>
+					<field name="UsrICFBDeduction"></field>
+				</qp-fieldset>
+			</div>
+		</qp-template>
+	</qp-tab>
+
+	<!-- Farmer Details Tab -->
+	<qp-tab id="tab-FarmerDetails" after="#tab-NutBuying" caption="Farmer Details" load-on-demand.bind="false" visible.bind="Document.IsNutBuyingFarmerTabVisible.value == true">
+		<qp-grid id="grid-FarmerDetail" view.bind="FarmerDetail"></qp-grid>
+	</qp-tab>
+
+	<!-- Files Tab -->
+	<qp-tab id="tab-Files" after="#tab-FarmerDetails" caption="Files" load-on-demand.bind="false">
+		<qp-grid id="grid-FileDetails" view.bind="FileDetails"></qp-grid>
+	</qp-tab>
+</template>

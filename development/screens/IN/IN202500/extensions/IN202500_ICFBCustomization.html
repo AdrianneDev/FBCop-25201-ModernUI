@@ -1,0 +1,31 @@
+<template>
+	<!-- General Tab - Item Defaults Section -->
+	<!-- Add UsrICFBIsFairTrade after KitItem -->
+	<field after="#fsItemDefaults-General [name='KitItem']" name="UsrICFBIsFairTrade" view.bind="ItemSettings"></field>
+	
+	<!-- Add UsrICFBFerValueCode after UsrICFBIsFairTrade -->
+	<field after="#fsItemDefaults-General [name='UsrICFBIsFairTrade']" name="UsrICFBFerValueCode" view.bind="ItemSettings"></field>
+	
+	<!-- Add UsrICFBMaxStorageDays after CountryOfOrigin -->
+	<field after="#fsItemDefaults-General [name='CountryOfOrigin']" name="UsrICFBMaxStorageDays" view.bind="ItemSettings"></field>
+	
+	<!-- Add UsrICFBShelfLife after UsrICFBMaxStorageDays -->
+	<field after="#fsItemDefaults-General [name='UsrICFBMaxStorageDays']" name="UsrICFBShelfLife" view.bind="ItemSettings"></field>
+
+	<!-- Packaging Tab - Weight and Volume Section -->
+	<!-- Add custom weight fields after VolumeUOM (at end of fieldset) -->
+	<field after="#fsDimensions-Packaging [name='VolumeUOM']" name="UsrICFBPackagingNetConversionRate" view.bind="ItemSettings"></field>
+	<field after="#fsDimensions-Packaging [name='UsrICFBPackagingNetConversionRate']" name="UsrICFBGrossWeight" view.bind="ItemSettings"></field>
+	<field after="#fsDimensions-Packaging [name='UsrICFBGrossWeight']" name="UsrICFBGrossWeightUOM" view.bind="ItemSettings"></field>
+	<field after="#fsDimensions-Packaging [name='UsrICFBGrossWeightUOM']" name="UsrICFBPackagingGrossConversionRate" view.bind="ItemSettings"></field>
+	<field after="#fsDimensions-Packaging [name='UsrICFBPackagingGrossConversionRate']" name="UsrICFBPackSize" view.bind="ItemSettings"></field>
+	<field after="#fsDimensions-Packaging [name='UsrICFBPackSize']" name="UsrICFBPackSizeOUM" view.bind="ItemSettings"></field>
+
+	<!-- Packaging Tab - Conversions Section (new fieldset in Column B) -->
+	<qp-fieldset after="#fsAutomaticPackaging-Packaging" id="fsConversions-Packaging" slot="B" view.bind="ItemSettings" caption="Conversions">
+		<field name="UsrICFBNetWeightLbs"></field>
+		<field name="UsrICFBNetWeightKg"></field>
+		<field name="UsrICFBGrossWeightLBS"></field>
+		<field name="UsrICFBGrossWeightKg"></field>
+	</qp-fieldset>
+</template>

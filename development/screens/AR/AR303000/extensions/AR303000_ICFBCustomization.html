@@ -1,0 +1,37 @@
+<template>
+    <!-- GENERAL TAB - Account Info fields              -->
+    <!-- Position after LocaleName in groupAdditionalAccountInfo -->
+    <field after="#groupAdditionalAccountInfo [name='LocaleName']" name="UsrICFBFairTradeCode" view.bind="CurrentCustomer"></field>
+    <field after="#groupAdditionalAccountInfo [name='UsrICFBFairTradeCode']" name="UsrICFBIsFerValueUsed" view.bind="CurrentCustomer"></field>
+
+    <!-- BILLING TAB - Wire Transfer and ACH sections   -->
+    <!-- Add new column after existing column B (columnSecondInTabBilling) -->
+    <qp-fieldset after="#columnSecondInTabBilling [id='gridPaymentMethodDetails']" id="fsWireTransfer" view.bind="CurrentCustomer" caption="For Wire Transfer" class="label-size-m">
+        <field name="UsrICFBAccountName"></field>
+        <field name="UsrICFBBankName"></field>
+        <field name="UsrICFBBankAddress"></field>
+        <field name="UsrICFBBankRoutingNbr"></field>
+        <field name="UsrICFBAccountNbr"></field>
+        <field name="UsrICFBSwiftCode"></field>
+    </qp-fieldset>
+    <qp-fieldset after="#fsWireTransfer" id="fsACHDelivery" view.bind="CurrentCustomer" caption="For ACH Delivery" class="label-size-m">
+        <field name="UsrICFBDelBankRoutingNbr"></field>
+        <field name="UsrICFBDelAccountName"></field>
+        <field name="UsrICFBDelAccountNbr"></field>
+    </qp-fieldset>
+
+    <!-- SHIPPING TAB - Default Shipping Instruction    -->
+    <field after="#groupShippingInstructions [name='CCalendarID']" name="fsICFBDefaultShippingInstruction" unbound replace-content>
+        <qp-field config-enabled.bind="false" control-state.bind="CurrentCustomer.UsrICFBDefaultShippingInstruction" config-type.bind="1" config-rows.bind="5"></qp-field>
+    </field>
+
+    <!-- BANK DETAILS TAB - New tab with grid           -->
+    <qp-tab id="tabBankDetails" after="#tabPaymentMethods" caption="Bank Details">
+        <qp-grid id="gridBankDetails" view.bind="BankDetails"></qp-grid>
+    </qp-tab>
+
+    <!-- HYPERLINK TAB - New tab with FileDetails grid  -->
+    <qp-tab id="tabHyperlink" after="#ComplianceTab" caption="Hyperlink">
+        <qp-grid id="gridFileDetails" view.bind="FileDetails"></qp-grid>
+    </qp-tab>
+</template>

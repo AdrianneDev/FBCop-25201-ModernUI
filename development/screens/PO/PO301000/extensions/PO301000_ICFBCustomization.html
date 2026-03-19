@@ -1,0 +1,50 @@
+<template>
+	<!-- ========== Form Header Fields ========== -->
+	
+	<!-- Column B: UsrICFBMemo after OrderDesc -->
+	<field
+		after="#fsColumnB-Order [name='OrderDesc']"
+		name="UsrICFBMemo"
+	></field>
+
+	<!-- Column A: Custom ICFB fields after VendorRefNbr -->
+	<field
+		after="#fsColumnA-Order [name='VendorRefNbr']"
+		name="UsrICFBPurchaseOrderType"
+	></field>
+
+	<field
+		after="#fsColumnA-Order [name='UsrICFBPurchaseOrderType']"
+		name="UsrICFBEndUse"
+	></field>
+
+	<!-- ========== Custom Tabs ========== -->
+
+	<!-- Nut Buying Tab - conditionally visible based on UsrICFBPurchaseOrderType = Coconut -->
+	<qp-tab id="tabICFBNutBuying"
+		after="#tab-Other"
+		caption="Nut Buying"
+		if.bind="CurrentDocument.IsNutBuyingTabVisible.value == true">
+		<qp-template id="formNutBuying" name="1-1" class="label-size-m">
+			<qp-fieldset slot="A" id="fsNutBuyingSettings" view.bind="CurrentDocument" caption="Nut Buying Settings">
+				<field name="UsrICFBSupplier" config-allow-edit.bind="true"></field>
+				<field name="UsrICFBSourcType"></field>
+				<field name="UsrICFBLocation"></field>
+				<field name="UsrICFBCoconutType"></field>
+				<field name="UsrICFBFieldBuyer"></field>
+			</qp-fieldset>
+		</qp-template>
+	</qp-tab>
+
+	<!-- Notes Log Tab -->
+	<qp-tab id="tabICFBNotesLog" after="#ComplianceTab" caption="Notes Log">
+		<qp-grid id="gridNotesLog" view.bind="NotesLog" wg-container="NotesLog_grdICFBNotes">
+		</qp-grid>
+	</qp-tab>
+
+	<!-- Hyperlink Tab -->
+	<qp-tab id="tabICFBHyperlink" after="#tabICFBNotesLog" caption="Hyperlink">
+		<qp-grid id="gridFileDetails" view.bind="FileDetails" wg-container="FileDetails_grdICFBFile">
+		</qp-grid>
+	</qp-tab>
+</template>

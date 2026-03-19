@@ -1,32 +1,11 @@
 import { PXFieldState, PXFieldOptions, PXView, createCollection, gridConfig, GridPreset, PXActionState, linkCommand } from "client-controls";
-import {
-	GL301000,
-	Batch as Batch_Base,
-	GLTran as GLTran_Base
-} from "src/screens/GL/GL301000/GL301000";
+import { CA305000 } from "src/screens/CA/CA305000/CA305000";
 
-export interface GL301000_ICFBCustomization extends GL301000 {}
-export class GL301000_ICFBCustomization {
+export interface CA305000_ICFBCustomization extends CA305000 {}
+export class CA305000_ICFBCustomization {
 	// Custom views for tabs
 	NotesLog = createCollection(ICFBNotelogs);
 	FileDetails = createCollection(ICFBFileDetails);
-}
-
-// Extend the Batch view class to add custom fields
-export interface Batch extends Batch_Base {}
-export class Batch {
-	// Reversing Date (after AutoReverseCopy)
-	UsrICFBReversingDate: PXFieldState<PXFieldOptions.CommitChanges>;
-	
-	// Journal Entry Type
-	UsrICFBJournalEntryType: PXFieldState;
-}
-
-// Extend the GLTran view class to add custom grid columns
-export interface GLTran extends GLTran_Base {}
-export class GLTran {
-	UsrICFBBAccountID: PXFieldState<PXFieldOptions.CommitChanges>;
-	UsrICFBBAccountName: PXFieldState;
 }
 
 // Notes Log view for tab

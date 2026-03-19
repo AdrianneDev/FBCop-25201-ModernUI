@@ -1,0 +1,21 @@
+<template>
+    <!-- Modify template to 3 columns -->
+    <qp-template modify="#formGeneral" name="1-1-1"></qp-template>
+    
+    <!-- General tab Add third column content in slot C, positioned after slot B div -->
+    <div slot="C" after="#formGeneral [slot='B']">
+        <qp-fieldset id="groupForWireTransfer" view.bind="LocationCurrent" caption="For Wire Transfer" wg-container="LocationCurrent_tab">
+            <field name="UsrICFBAccountName"></field>
+            <field name="UsrICFBBankName"></field>
+            <field name="UsrICFBBankAddress"></field>
+            <field name="UsrICFBBankRoutingNbr"></field>
+            <field name="UsrICFBAccountNbr"></field>
+            <field name="UsrICFBSwiftCode"></field>
+        </qp-fieldset>
+        <qp-fieldset id="groupForACHDelivery" view.bind="LocationCurrent" caption="For ACH Delivery" wg-container="LocationCurrent_tab">
+            <field name="UsrICFBDelBankRoutingNbr"></field>
+            <field name="UsrICFBDelAccountName"></field>
+            <field name="UsrICFBDelAccountNbr"></field>
+        </qp-fieldset>
+    </div>
+</template>

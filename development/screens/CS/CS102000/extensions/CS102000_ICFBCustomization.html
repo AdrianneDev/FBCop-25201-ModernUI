@@ -1,0 +1,26 @@
+<template>
+
+	<qp-template modify="#formBranchDetails" name="1-1-1"></qp-template>
+
+	<div append="#formBranchDetails" slot="C" id="columnThird-BranchDetails">
+		<qp-fieldset id="groupFairTradeID" caption="Fair Trade ID - Annex 1" view.bind="DefContact">
+			<field name="UsrICFBFairTradeID"></field>
+		</qp-fieldset>
+
+		<qp-fieldset id="groupWireTransferBranch" caption="For Wire Transfer" view.bind="DefContact">
+			<field name="UsrICFBAccountNameBranch"></field>
+			<field name="UsrICFBBankNameBranch"></field>
+			<field name="UsrICFBBankAddressBranch"></field>
+			<field name="UsrICFBBankRoutingNbrBranch"></field>
+			<field name="UsrICFBAccountNbrBranch"></field>
+			<field name="UsrICFBSwiftCodeBranch"></field>
+		</qp-fieldset>
+
+		<qp-fieldset id="groupACHDeliveryBranch" caption="For ACH Delivery" view.bind="DefContact">
+			<field name="UsrICFBDelBankRoutingNbrBranch"></field>
+			<field name="UsrICFBDelAccountNameBranch"></field>
+			<field name="UsrICFBDelAccountNbrBranch"></field>
+		</qp-fieldset>
+	</div>
+
+</template>

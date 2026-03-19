@@ -1,0 +1,18 @@
+<template>
+    <!-- Add Instructions fieldset to Financial tab, column C -->
+    <qp-fieldset append="#columnThird-Financial" id="groupInstructions" view.bind="CurrentDocument" caption="Instructions">
+        <field name="UsrICFBInvoiceInstruction" config-type.bind="1" config-rows.bind="5"></field>
+    </qp-fieldset>
+
+    <!-- Notes Log Tab (after Compliance tab from base extensions) -->
+    <qp-tab id="tabNotesLog" after="#ComplianceTab" caption="Notes Log">
+        <qp-grid id="gridNotesLog" view.bind="NotesLog" wg-container="NotesLog_grdICFBNotes">
+        </qp-grid>
+    </qp-tab>
+
+    <!-- Hyperlink Tab -->
+    <qp-tab id="tabHyperlink" after="#tabNotesLog" caption="Hyperlink">
+        <qp-grid id="gridFileDetails" view.bind="FileDetails" wg-container="FileDetails_grdICFBFile">
+        </qp-grid>
+    </qp-tab>
+</template>

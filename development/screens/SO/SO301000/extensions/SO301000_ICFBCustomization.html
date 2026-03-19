@@ -1,0 +1,32 @@
+<template>
+    <!-- Header fields: Add UsrICFBMemo after OrderDesc (slot B) -->
+    <field after="#fsColumnB-Order [name='OrderDesc']" name="UsrICFBMemo" config-type.bind="1" config-rows.bind="2"></field>
+
+    <!-- Header fields: Add Contract fields to existing slot C (after CuryControlTotal) -->
+    <field after="#fsColumnB-Order [name='UsrICFBMemo']" name="UsrICFBContractNo"></field>
+    <field after="#fsColumnB-Order [name='UsrICFBContractNo']" name="UsrICFBContractDate"></field>
+
+    <!-- Shipping Tab: Add ICFB Shipping fields fieldset after Order Orchestration fieldset -->
+    <qp-fieldset after="#fsFreightTotals-Dimensions" id="fsICFBShippingInfo" view.bind="CurrentDocument" caption="Shipping Instructions">
+        <field name="UsrICFBConsignee"></field>
+        <field name="UsrICFBConsigneeAddress"></field>
+        <field name="UsrICFBNotifyParty"></field>
+        <field name="UsrICFBNotifyPartyAddress"></field>
+        <field name="UsrICFBAlsoNotify"></field>
+        <field name="UsrICFBAlsoNotifyAddress"></field>
+        <field name="UsrICFBOtherNotifyParty"></field>
+        <field name="UsrICFBOtherNotifyPartyAddress"></field>
+        <field name="UsrICFBDefaultShippingInstruction"></field>
+        <field name="UsrICFBSpecialShippingInstruction"></field>
+    </qp-fieldset>
+
+    <!-- Notes Log Tab -->
+    <qp-tab id="tabICFBNotesLog" after="#tab-Totals" caption="Notes Log">
+        <qp-grid id="gridNotesLog" view.bind="NotesLog"></qp-grid>
+    </qp-tab>
+
+    <!-- Hyperlink Tab -->
+    <qp-tab id="tabICFBHyperlink" after="#tabICFBNotesLog" caption="Hyperlink">
+        <qp-grid id="gridFileDetails" view.bind="FileDetails"></qp-grid>
+    </qp-tab>
+</template>

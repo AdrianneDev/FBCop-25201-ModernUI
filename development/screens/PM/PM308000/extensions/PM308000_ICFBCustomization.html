@@ -1,0 +1,11 @@
+<template>
+	<!-- Notes Log Tab -->
+	<qp-tab id="tabNotesLog" after="#ComplianceTab" caption="Notes Log">
+		<qp-grid id="grdICFBNotes" view.bind="NotesLog"></qp-grid>
+	</qp-tab>
+
+	<!-- Hyperlink Tab -->
+	<qp-tab id="tabHyperlink" after="#tabNotesLog" caption="Hyperlink">
+		<qp-grid id="grdICFBFile" view.bind="FileDetails"></qp-grid>
+	</qp-tab>
+</template>

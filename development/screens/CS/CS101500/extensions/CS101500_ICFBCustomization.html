@@ -1,0 +1,31 @@
+<template>
+
+	<qp-template modify="#formCompanyDetails" name="1-1-1"></qp-template>
+
+	<div append="#formCompanyDetails" slot="C" id="columnThird-CompanyDetails">
+		<qp-fieldset id="groupBIRAccreditation" caption="BIR Accreditation" view.bind="DefContact">
+			<field name="UsrICFBAccreditationNbr"></field>
+			<field name="UsrICFBAccredIssueDate"></field>
+			<field name="UsrICFBAccredValidUntil"></field>
+			<field name="UsrICFBBIRPermit"></field>
+			<field name="UsrICFBPermitIssueDate"></field>
+			<field name="UsrICFBPermitValidUntil"></field>
+		</qp-fieldset>
+
+		<qp-fieldset id="groupWireTransferCompany" caption="For Wire Transfer" view.bind="DefContact">
+			<field name="UsrICFBAccountNameCompany"></field>
+			<field name="UsrICFBBankNameCompany"></field>
+			<field name="UsrICFBBankAddressCompany"></field>
+			<field name="UsrICFBBankRoutingNbrCompany"></field>
+			<field name="UsrICFBAccountNbrCompany"></field>
+			<field name="UsrICFBSwiftCodeCompany"></field>
+		</qp-fieldset>
+
+		<qp-fieldset id="groupACHDeliveryCompany" caption="For ACH Delivery" view.bind="DefContact">
+			<field name="UsrICFBDelBankRoutingNbrCompany"></field>
+			<field name="UsrICFBDelAccountNameCompany"></field>
+			<field name="UsrICFBDelAccountNbrCompany"></field>
+		</qp-fieldset>
+	</div>
+
+</template>

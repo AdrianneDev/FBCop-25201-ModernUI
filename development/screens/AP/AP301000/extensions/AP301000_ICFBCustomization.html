@@ -1,0 +1,46 @@
+<template>
+	<!-- Fix: Bind visibility of IsRetainageDocument field to backend visibility state -->
+	<!-- IsRetainageDocument is the 2nd qp-field nested inside DueDate field -->
+	<qp-field modify="#columnSecondSummary field[name='DueDate'] qp-field:nth-of-type(2)" 
+		show.bind="Document.IsRetainageDocument.visible"></qp-field>
+
+	<!-- Column A: Advance Category after InvoiceNbr (visible for Prepayment) -->
+	<field
+		after="#columnFirstSummary [name='InvoiceNbr']"
+		name="UsrICFBAdvanceCategory"
+	></field>
+
+	<!-- Column A: Disbursement Category after Advance Category -->
+	<field
+		after="#columnFirstSummary [name='UsrICFBAdvanceCategory']"
+		name="UsrICFBDisbursementCategory"
+	></field>
+
+	<!-- Column A: End Use after Disbursement Category -->
+	<field
+		after="#columnFirstSummary [name='UsrICFBDisbursementCategory']"
+		name="UsrICFBEndUse"
+	></field>
+
+	<!-- Column A: Billing Category after End Use -->
+	<field
+		after="#columnFirstSummary [name='UsrICFBEndUse']"
+		name="UsrICFBBillingCategory"
+	></field>
+
+	<!-- Column B: Memo after DocDesc -->
+	<field
+		after="#columnSecondSummary [name='DocDesc']"
+		name="UsrICFBMemo"
+	></field>
+
+	<!-- Notes Log Tab -->
+	<qp-tab id="tabICFBNotesLog" after="#ComplianceTab" caption="Notes Log">
+		<qp-grid id="gridNotesLog" view.bind="NotesLog"></qp-grid>
+	</qp-tab>
+
+	<!-- Hyperlink Tab -->
+	<qp-tab id="tabICFBHyperlink" after="#tabICFBNotesLog" caption="Hyperlink">
+		<qp-grid id="gridFileDetails" view.bind="FileDetails"></qp-grid>
+	</qp-tab>
+</template>

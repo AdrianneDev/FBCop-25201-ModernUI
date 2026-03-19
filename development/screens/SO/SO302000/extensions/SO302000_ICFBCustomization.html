@@ -1,0 +1,23 @@
+<template>
+    <!-- Shipping Tab: Add ICFB fields fieldset in Shipping tab -->
+    <div after="#divColumnB-Shipping" id="divColumnC-Shipping" slot="C">
+        <qp-fieldset after="#fsShippingInfo-Shipping" id="fsICFBShipping" view.bind="CurrentDocument" caption="PPIC">
+            <field name="UsrICFBNotfitfor"></field>
+            <field name="UsrICFBTimeIn"></field>
+            <field name="UsrICFBTimeOut"></field>
+            <field name="UsrICFBTareFare"></field>
+            <field name="UsrICFBNetWeight"></field>
+            <field name="UsrICFBRefFGEWRNbr"></field>
+            <field name="UsrICFBWaybillNbr"></field>
+            <field name="UsrICFBVehicleNbr"></field>
+            <field name="UsrICFBVanNbr"></field>
+            <field name="UsrICFBSealNbr"></field>
+            <field name="UsrICFBContainerLoadingInstructions"></field>
+        </qp-fieldset>
+    </div>
+
+    <!-- New Hyperlink Tab with FileDetails grid -->
+    <qp-tab after="#tab-Packages" for="tabbar" id="tab-Hyperlink" caption="Hyperlink">
+        <qp-grid id="grid-FileDetails" view.bind="FileDetails"></qp-grid>
+    </qp-tab>
+</template>
