@@ -11,7 +11,7 @@ import {
 	viewInfo
 } from "client-controls";
 
-import { ATPT2012 } from "src/customizationScreens/Company/screens/AT/ATPT2012/ATPT2012";
+import { ATPT2012 } from "../ATPT2012";
 
 export interface ATPT2012_ICFBCustomization extends ATPT2012 {}
 export class ATPT2012_ICFBCustomization {

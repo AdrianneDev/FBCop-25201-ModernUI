@@ -11,7 +11,7 @@ import {
 	viewInfo
 } from "client-controls";
 
-import { ATPT3011 } from "src/customizationScreens/Company/screens/AT/ATPT3011/ATPT3011";
+import { ATPT3011 } from "../ATPT3011";
 
 export interface ATPT3011_ICFBCustomization extends ATPT3011 {}
 export class ATPT3011_ICFBCustomization {
