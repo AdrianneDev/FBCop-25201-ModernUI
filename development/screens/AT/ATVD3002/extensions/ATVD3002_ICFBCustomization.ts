@@ -13,9 +13,9 @@ import {
 } from "client-controls";
 
 import { 
-	ATVD3002, 
-	ATVDVendorAccreditation as ATVDVendorAccreditation_Base,
+	ATVD3002,
 } from "../ATVD3002";
+import {ATVDVendorAccreditation as ATVDVendorAccreditation_Base} from "../views";
 
 export interface ATVD3002_ICFBCustomization extends ATVD3002 {}
 export class ATVD3002_ICFBCustomization {
@@ -27,8 +27,8 @@ export class ATVD3002_ICFBCustomization {
 	FileDetails = createCollection(ICFBFileDetails);
 }
 
-export interface ATVDVendorAccreditation extends ATVDVendorAccreditation_Base {}
-export class ATVDVendorAccreditation {
+export interface ATVDVendorAccreditation_ICFBCustomization extends ATVDVendorAccreditation_Base {}
+export class ATVDVendorAccreditation_ICFBCustomization {
 	@controlConfig({ allowEdit: true })
 	UsrICFBTaxRegID: PXFieldState<PXFieldOptions.CommitChanges>;
 }
